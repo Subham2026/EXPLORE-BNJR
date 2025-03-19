@@ -59,26 +59,30 @@ ScrollReveal().reveal(".choose__list li", {
     interval: 500,
 });
 
-const swiper = new Swiper(".swiper", {
-    slidesPerView: 3, // Default for desktop
-    spaceBetween: 0,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next", // Enable "Next" button
-      prevEl: ".swiper-button-prev", // Enable "Prev" button
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1, // Mobile: 1 slide
-      },
-      768: {
-        slidesPerView: 2, // Tablet: 2 slides
-      },
-      1024: {
-        slidesPerView: 3, // Desktop: 3 slides
-      },
-    },
-  });
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".swiper", {
+        loop: true,
+        grabCursor: true,
+        spaceBetween: 0,
+        slidesPerView: "auto", // Allow dynamic adjustment
+        centeredSlides: true,  // Helps with looping properly
+        autoplay: {
+            delay: 3000, // Adjust timing as needed
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1.2,
+            },
+            768: {
+                slidesPerView: 2.2,
+            },
+            1024: {
+                slidesPerView: 3.2,
+            },
+        },
+    });
+});
   
 
 
